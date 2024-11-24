@@ -1,0 +1,2 @@
+NAME                        REFERENCE                                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+shestera-scaletestapp-hpa   Deployment/shestera-scaletestapp-deployment   64%/50%   1         10        4          8m41s
