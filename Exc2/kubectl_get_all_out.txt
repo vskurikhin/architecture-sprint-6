@@ -1,0 +1,19 @@
+NAME                                                    READY   STATUS    RESTARTS   AGE
+pod/shestera-scaletestapp-deployment-7767594589-4c56d   1/1     Running   0          61s
+pod/shestera-scaletestapp-deployment-7767594589-jbnts   1/1     Running   0          10s
+pod/shestera-scaletestapp-deployment-7767594589-mdndz   1/1     Running   0          2m1s
+pod/shestera-scaletestapp-deployment-7767594589-vlpf2   1/1     Running   0          2m1s
+
+NAME                                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes                         ClusterIP   10.96.0.1        <none>        443/TCP          26h
+service/shestera-scaletestapp-deployment   NodePort    10.101.36.141    <none>        8080:32647/TCP   36m
+service/shestera-scaletestapp-service      ClusterIP   10.110.129.125   <none>        8080/TCP         40m
+
+NAME                                               READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/shestera-scaletestapp-deployment   4/4     4            4           43m
+
+NAME                                                          DESIRED   CURRENT   READY   AGE
+replicaset.apps/shestera-scaletestapp-deployment-7767594589   4         4         4       43m
+
+NAME                                                            REFERENCE                                     TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/shestera-scaletestapp-hpa   Deployment/shestera-scaletestapp-deployment   64%/50%   1         10        4          7m46s

@@ -1,0 +1,24 @@
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/coredns-5dd5756b68-mg8vv           1/1     Running   0          25h
+pod/etcd-minikube                      1/1     Running   0          25h
+pod/kube-apiserver-minikube            1/1     Running   0          25h
+pod/kube-controller-manager-minikube   1/1     Running   0          25h
+pod/kube-proxy-l5pdr                   1/1     Running   0          25h
+pod/kube-scheduler-minikube            1/1     Running   0          25h
+pod/metrics-server-7c66d45ddc-5rcm8    1/1     Running   0          10m
+pod/storage-provisioner                1/1     Running   0          25h
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns         ClusterIP   10.96.0.10     <none>        53/UDP,53/TCP,9153/TCP   25h
+service/metrics-server   ClusterIP   10.100.35.54   <none>        443/TCP                  10m
+
+NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   25h
+
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coredns          1/1     1            1           25h
+deployment.apps/metrics-server   1/1     1            1           10m
+
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/coredns-5dd5756b68          1         1         1       25h
+replicaset.apps/metrics-server-7c66d45ddc   1         1         1       10m

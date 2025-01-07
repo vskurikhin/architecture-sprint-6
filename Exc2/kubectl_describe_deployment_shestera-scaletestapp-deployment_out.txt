@@ -1,0 +1,35 @@
+Name:                   shestera-scaletestapp-deployment
+Namespace:              default
+CreationTimestamp:      Sun, 24 Nov 2024 12:53:57 +0300
+Labels:                 app=shestera-scaletestapp
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=shestera-scaletestapp
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=shestera-scaletestapp
+  Containers:
+   shestera-scaletestapp:
+    Image:      shestera/scaletestapp:latest
+    Port:       8080/TCP
+    Host Port:  0/TCP
+    Limits:
+      memory:  30Mi
+    Requests:
+      memory:     20Mi
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   shestera-scaletestapp-deployment-7767594589 (1/1 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  4m23s  deployment-controller  Scaled up replica set shestera-scaletestapp-deployment-7767594589 to 1
